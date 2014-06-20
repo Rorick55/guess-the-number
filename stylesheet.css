@@ -1,0 +1,38 @@
+.number {
+  border:1px solid darkblue;
+  width: 10px;
+  height: 15px;
+  padding: 20px;
+  font-size: 20px;
+  display: inline-block;
+  margin: 10px;
+  background-color: darkblue;
+  color: white;
+
+}
+
+#body{
+  border: 1px solid black;
+  height: 600px;
+  width:90%;
+  margin: 30px;
+}
+
+.correct {
+  border:1px solid black;
+  width: 10px;
+  height: 15px;
+  margin: 10px;
+  padding: 20px;
+  font-size: 20px;
+  background-color: red;
+  color: white;
+}
+
+.again {
+  color: red;
+}
+
+h1{
+  text-align: center
+}
