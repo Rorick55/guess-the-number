@@ -1,37 +1,41 @@
 var randomNumber = Math.floor(Math.random() * 100 + 1);
 var numberPicked;
 var maxNum = 100;
-var minNum = 1;
+var minNum = 0;
 
 
 
 $(document).ready(function(){
   /// Adding in the numbers /////
    for(var i = 1; i <= 100; i++){
-    $('#body').append("<li class='number' id='"+i+"'>"+i+"</li>");
+    var $li = $('<li>').attr({id: i, class: 'number'}).html(i);
+    $('#body').append($li);
    };
   //////////Styling hover/////////
     $('.number').mouseenter(function(){
-      $(this).fadeTo('fast', 0.5);
+      $(this).addClass('opacity');
     });
     $('.number').mouseleave(function(){
-      $(this).fadeTo('fast', 1);
+      $(this).removeClass('opacity');
     });
   //////////Number selection/////////////
     $('.number').click(function(){
-        numberPicked = $(this).text();
+        var num = $(this).text();
+        numberPicked = parseInt(num);
       if(numberPicked < randomNumber) {
-        for(var i = numberPicked; i >= minNum; i--){
-          $("#"+i).hide();
+        for(i = minNum; i <= numberPicked; i++){
+          $("#"+i).addClass('hidden');
         };
-        minNum = numberPicked
+        minNum = numberPicked;
       } else if(numberPicked > randomNumber){
-        for(var i = numberPicked; i <= maxNum; i++){
-          $("#"+i).hide();
+        for(i = numberPicked; i <= maxNum; i++){
+          $("#"+i).addClass('hidden');
         };
-        maxNum = numberPicked - 1
+        maxNum = numberPicked;
       } else {
-        alert("Correct! the number was " + randomNumber);
+        $('h1').text('You Won!! The number was ' + randomNumber);
+        $('#'+randomNumber).addClass('correct');
+        // alert("Correct! the number was " + randomNumber);
         $('#body').prepend("<h2 class='again'>Play Again?</h2>");
       };
       ////////Reloading the game///////////

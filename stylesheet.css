@@ -1,14 +1,19 @@
 .number {
   border:1px solid darkblue;
-  width: 10px;
-  height: 15px;
-  padding: 20px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  vertical-align: center;
   font-size: 20px;
   display: inline-block;
   margin: 10px;
   background-color: darkblue;
   color: white;
 
+}
+
+.opacity{
+  opacity: 0.5;
 }
 
 #body{
@@ -28,9 +33,14 @@
   background-color: red;
   color: white;
 }
+.hidden {
+  display: none;
+}
 
 .again {
+  width: 40;
   color: red;
+  text-align: center;
 }
 
 h1{
